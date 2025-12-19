@@ -1,0 +1,40 @@
+# Robots.txt for LydiaSite
+# Системный коуч Лидия Эгай
+
+User-agent: *
+Allow: /
+
+# AI Search Bots (критично для AIO!)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandexbot
+Allow: /
+
+# Block dev/build artifacts
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://lydia-coach.vercel.app/sitemap.xml
