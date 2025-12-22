@@ -37,4 +37,4 @@ Disallow: /node_modules/
 Disallow: /*.json$
 
 # Sitemap
-Sitemap: https://lydia-coach.vercel.app/sitemap.xml
+Sitemap: https://lydiaeguy.coach/sitemap.xml

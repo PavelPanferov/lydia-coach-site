@@ -8,12 +8,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Manrope', 'sans-serif'],
-        oswald: ['Oswald', 'sans-serif'],
+        sans: ['Manrope', 'Manrope Fallback', 'system-ui', 'sans-serif'],
+        oswald: ['Oswald', 'Oswald Fallback', 'system-ui', 'sans-serif'],
       },
       colors: {
         brand: {
-          red: '#dc2626',
+          red: '#ab0d02',
           black: '#000000',
           white: '#ffffff',
         }

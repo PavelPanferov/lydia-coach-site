@@ -1,4 +1,22 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "lydia-coach.vercel.app" }
+      ],
+      "destination": "https://lydiaeguy.coach/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "(?<subdomain>.*)\\.vercel\\.app" }
+      ],
+      "destination": "https://lydiaeguy.coach/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],

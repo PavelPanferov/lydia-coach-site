@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
     import { Menu, X } from 'lucide-react';
     import { NavItem, SectionId } from '../types';
     
@@ -16,17 +16,8 @@ import React, { useState, useEffect } from 'react';
       onNavigate: (view: 'home', sectionId?: string) => void;
     }
     
-    export const Navigation: React.FC<NavigationProps> = ({ currentView, onNavigate }) => {
-      const [isScrolled, setIsScrolled] = useState(false);
+    export const Navigation: React.FC<NavigationProps> = ({ currentView: _currentView, onNavigate }) => {
       const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    
-      useEffect(() => {
-        const handleScroll = () => {
-          setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
     
       const handleNavClick = (id: string) => {
         setIsMobileMenuOpen(false);
@@ -35,14 +26,12 @@ import React, { useState, useEffect } from 'react';
     
       return (
         <nav
-          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-            isScrolled || isMobileMenuOpen || currentView !== 'home' ? 'bg-white py-4 border-b border-black' : 'bg-transparent py-6'
-          }`}
+          className="fixed top-0 left-0 right-0 z-50 bg-white py-4 border-b border-black"
         >
           <div className="container mx-auto px-6 flex items-center justify-between">
             <div className="flex items-center cursor-pointer z-50 group" onClick={() => onNavigate('home', 'hero')}>
-              <div className="w-8 h-8 bg-black mr-3 group-hover:bg-red-600 transition-colors hidden md:block"></div>
-              <span className={`text-3xl font-bold font-oswald uppercase tracking-tighter ${isScrolled || isMobileMenuOpen || currentView !== 'home' ? 'text-black' : 'text-black md:text-black'}`}>
+              <div className="w-8 h-8 bg-black mr-3 group-hover:bg-brand-red transition-colors hidden md:block"></div>
+              <span className="text-3xl font-bold font-oswald uppercase tracking-tighter text-black">
                 Lydia Eguy
               </span>
             </div>
@@ -53,18 +42,14 @@ import React, { useState, useEffect } from 'react';
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className="text-sm font-bold uppercase tracking-widest font-oswald text-black hover:text-red-600 transition-colors"
+                  className="text-sm font-bold uppercase tracking-widest font-oswald text-black hover:text-brand-red transition-colors"
                 >
                   {item.label}
                 </button>
               ))}
               <button
                 onClick={() => handleNavClick(SectionId.CONTACTS)}
-                className={`px-8 py-3 transition-all duration-300 uppercase font-bold tracking-widest font-oswald text-sm ${
-                  isScrolled || currentView !== 'home'
-                    ? 'bg-black text-white hover:bg-red-600'
-                    : 'bg-black text-white hover:bg-red-600'
-                }`}
+                className="px-8 py-3 bg-black text-white hover:bg-brand-red transition-all duration-300 uppercase font-bold tracking-widest font-oswald text-sm"
               >
                 Связаться
               </button>
@@ -87,14 +72,14 @@ import React, { useState, useEffect } from 'react';
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className="text-4xl font-bold font-oswald uppercase text-black hover:text-red-600 transition-colors"
+                  className="text-4xl font-bold font-oswald uppercase text-black hover:text-brand-red transition-colors"
                 >
                   {item.label}
                 </button>
               ))}
               <button 
                 onClick={() => handleNavClick(SectionId.CONTACTS)}
-                className="mt-10 px-10 py-4 bg-red-600 text-white font-bold font-oswald uppercase tracking-widest text-sm"
+                className="mt-10 px-10 py-4 bg-brand-red text-white font-bold font-oswald uppercase tracking-widest text-sm"
               >
                 Написать мне
               </button>

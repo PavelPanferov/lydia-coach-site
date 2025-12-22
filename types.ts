@@ -17,8 +17,9 @@ export interface ServiceLevel {
   detailedDescription: string; // For the specific page
   price: string;
   image: string;
+  imagePosition?: string; // Custom object-position for detail page (e.g., "top", "center", "30% 20%")
   features: string[]; // Short list for card
-  
+
   // Detailed page content
   forWhom: string[];
   whatIsInside: ServiceFeature[];
@@ -57,11 +58,14 @@ export interface ArticleSection {
 
 export interface Article {
   id: number;
+  slug: string; // URL-friendly identifier for SEO (e.g., "dengi-ne-prihodyat-na-styd")
   title: string;
   subtitle: string;
-  description: string;
+  description: string; // Meta description for SEO
   tags: string[];
   readTime: string;
+  datePublished: string; // ISO date for Schema.org
+  dateModified?: string; // ISO date for Schema.org
   content: ArticleSection[];
   cta: {
     text: string;
