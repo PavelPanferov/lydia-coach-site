@@ -1,2 +1,4 @@
 # SPA routing for Cloudflare Pages
+# Static files are served automatically before redirects
+# This only catches routes that don't match real files
 /* /index.html 200
