@@ -32,7 +32,7 @@ export interface Review {
   name: string;
   role: string;
   text: string;
-  image?: string;
+  image: string;
 }
 
 export interface FAQItem {

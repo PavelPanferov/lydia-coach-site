@@ -11,7 +11,10 @@ import {
   Zap,
   X,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  ChevronDown,
+  Quote,
+  User
 } from 'lucide-react';
 
 import imgHero from './images/главная.JPG';
@@ -83,6 +86,13 @@ import imgAbout from './images/кто_я_такая.JPG';
 import imgService1 from './images/клуб_your_era.JPG';
 import imgService2 from './images/коучинговое_сопровождение.JPG';
 import imgService3 from './images/личное_менторство.JPG';
+
+// Review photos
+import imgAnna from './images/anna.png';
+import imgYasmina from './images/yasmina.png';
+import imgAnastasia from './images/anastasia.png';
+import imgDilbar from './images/dilbar.jpg';
+import imgSherzod from './images/sherzod.jpg';
 import { Navigation } from './components/Navigation';
 import { SectionHeading } from './components/SectionHeading';
 import { SectionId, ServiceLevel, Review, FAQItem, Article, ArticleSection } from './types';
@@ -188,21 +198,66 @@ const SERVICES: ServiceLevel[] = [
 const REVIEWS: Review[] = [
   {
     id: '1',
-    name: "Анна С.",
-    role: "CEO Agency",
-    text: "Лидия не 'лечит', она вскрывает. За две сессии я поняла, почему сливаю миллионные контракты. Это было больно, но это лучшее вложение в моей жизни.",
+    name: "Анна Т.",
+    role: "Основательница продакшен-агентства",
+    text: `Я пришла к Лиде сразу с несколькими разрозненными запросами, а в процессе стало понятно, что главная потребность — обрести ясность: куда я иду в личной жизни и в работе. Благодаря структуре, точным вопросам и очень поддерживающей, безопасной атмосфере запрос трансформировался в чёткое понимание своих целей и жизненных приоритетов.
+
+Я увидела, что раньше сливала энергию не туда, переживала и вкладывалась не в то, что на самом деле для меня важнее. В итоге появились чёткие, простые цели, понимание своих приоритетов и больше порядка в работе с учётом моего реального ритма.
+
+Я бы рекомендовала сессии с Лидой всем, кто хочет разобраться в своих жизненных приоритетах и осознанно идти своим путём, потому что без этого ты будто каждый день идёшь вслепую, не понимая куда и зачем.`,
+    image: imgAnna,
   },
   {
     id: '2',
-    name: "Мария К.",
-    role: "Art Director",
-    text: "Я пришла с запросом 'нет энергии', а ушла с пониманием, что я просто живу чужую жизнь. Уволилась, открыла студию. Страшно? Да. Жалею? Ни секунды.",
+    name: "Ясмина М.",
+    role: "Видеограф, лайф-стайл блогер",
+    text: `До начала работы я будто потеряла саму себя. Внутри было пусто, я не понимала куда я иду и почему мне каждый день плохо.
+
+В процессе нашей работы я столкнулась лицом к лицу с правдой. Было приятно слышать правду и не получать осуждения в свой адрес, а наоборот – поддержку.
+
+После сессии я устроилась на новую классную работу, со стабильной зп (которая кстати выше х3 чем было до), туман в голове рассеялся и появились силы творить и работать над собой.
+
+Я посоветовала бы сессии тем, кто думает, что потерял себя, кому кажется, что будто в жизни все идет не по плану и кто хочет поменять свою жизнь и главное СЕБЯ, но не знает как.`,
+    image: imgYasmina,
   },
   {
     id: '3',
-    name: "Елена В.",
-    role: "Founder IT",
-    text: "Никакой эзотерики и дыхания маткой. Четко, жестко, по фактам. Мозг встал на место. Доход вырос х3 за полгода. Работаем дальше.",
+    name: "Анастасия Ч.",
+    role: "Психолог",
+    text: `У меня была первая коуч-сессия, и опыт оказался ясным и поддерживающим. С самого начала я попросила "погрузить" меня в процесс — и это получилось: мне объяснили, как будет строиться сессия, что мы можем делать, какие варианты финала возможны. Для меня, как тревожного человека, это дало чувство безопасности и включённости — я сразу смогла работать.
+
+Tone of Voice коуча был открытый, прямой, но при этом глубоко включённый и уважительный. Не "ведущий за ручку", а такой, который помогает направиться, но думаешь — ты сама. Чёткие границы, ясность, но при этом настоящая эмоциональная связь.
+
+Когда я пришла, всё было запутано: было ощущение, что я как будто живу не свою жизнь, двигаюсь не туда, слишком сложно иду к целям. Коуч помог мне зацепиться за конкретику, мы вместе уточнили запрос и определили, каким может быть положительный результат именно для меня.
+
+После сессии стало легче. Как будто клубок из мыслей, тревог и напряжения начал распутываться. Появилось ощущение, что я могу действовать, не убегая от себя.`,
+    image: imgAnastasia,
+  },
+  {
+    id: '4',
+    name: "Дильбар Э.",
+    role: "Бренд-маркетолог",
+    text: `Прошло полтора месяца как я собрала волю в кулак, набралась храбрости и ушла с того места где я чувствовала себя не комфортно и все это произошло после коуч сессии которую ты провела. Я тогда увидела свои желания, мечты и поняла что мне ничего никогда не мешало кроме своих страхов.
+
+Я все медлила процесс своего же развития, боясь начать что-то делать. Сейчас не поверишь, я работаю в банковской сфере - как я сама мечтала, сижу в классном и уютном здании, у меня очень дружный коллектив и классный руководитель, я нашла тут свои мечты.
+
+Мы с тобой провели всего лишь один сеанс, а я от туда вышла совсем другой, любящей себя и самое главное начала верить в себя!
+
+Не описать словами как я благодарна тебе, твоему времени, труду и энергии.`,
+    image: imgDilbar,
+  },
+  {
+    id: '5',
+    name: "Шерзод У.",
+    role: "Юрист, предприниматель",
+    text: `До начала работы было ощущение хаоса в голове, неуверенности в себе и нехватки ясности, сложно было понять, куда двигаться и на что опираться.
+
+Больше всего помогли наводящие вопросы и умение копать глубже. Плюс лёгкость в общении и способность быстро находить общий язык. Благодаря этому работа шла комфортно.
+
+Уже за 4 занятия появились заметные изменения: стало больше уверенности, улучшилось самоощущение и, самое главное, появилась ясность ума. Понимание своих шагов и опоры, которые теперь осталось закрепить.
+
+Обязательно рекомендую Лидию всем, кто сомневается, начинать ли работу. Если вам важны результат, ясность и честный профессиональный подход — точно не пожалеете.`,
+    image: imgSherzod,
   }
 ];
 
@@ -488,6 +543,247 @@ const ARTICLES: Article[] = [
 ];
 
 // --- Helper Components ---
+
+// Review Card with expandable text for long testimonials
+const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const contentRef = React.useRef<HTMLDivElement>(null);
+  const maxLength = 250;
+  const isLong = review.text.length > maxLength;
+
+  // Get preview text (first ~250 chars, cut at word boundary)
+  const getPreviewText = () => {
+    const cutPoint = review.text.lastIndexOf(' ', maxLength);
+    return review.text.substring(0, cutPoint > 0 ? cutPoint : maxLength);
+  };
+
+  const previewText = getPreviewText();
+  const remainingText = review.text.substring(previewText.length);
+
+  return (
+    <div className="flex-shrink-0 w-[320px] md:w-[400px] bg-zinc-900 rounded-2xl p-6 md:p-8 relative overflow-hidden transition-all duration-500">
+      {/* Quote icon */}
+      <Quote className="absolute top-4 right-4 md:top-6 md:right-6 text-brand-red/30" size={32} />
+
+      {/* Header with photo and name */}
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-red flex-shrink-0">
+          <img
+            src={review.image}
+            alt={review.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <h4 className="text-lg font-bold text-white">{review.name}</h4>
+          <p className="text-sm text-gray-400">{review.role}</p>
+        </div>
+      </div>
+
+      {/* Review text with smooth expand/collapse */}
+      <div className="relative">
+        <div className="text-gray-300 text-sm leading-relaxed whitespace-pre-line">
+          {/* Preview text - always visible */}
+          <span>{previewText}</span>
+
+          {/* Expandable part */}
+          {isLong && (
+            <>
+              <span
+                className={`transition-opacity duration-300 ${isExpanded ? 'opacity-0 hidden' : 'opacity-100'}`}
+              >
+                ...
+              </span>
+              <div
+                ref={contentRef}
+                className="grid transition-all duration-500 ease-out"
+                style={{
+                  gridTemplateRows: isExpanded ? '1fr' : '0fr',
+                  opacity: isExpanded ? 1 : 0,
+                }}
+              >
+                <div className="overflow-hidden">
+                  <span>{remainingText}</span>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+
+        {isLong && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsExpanded(!isExpanded);
+            }}
+            className="mt-4 flex items-center gap-1.5 text-brand-red hover:text-white transition-colors duration-300 text-sm font-medium group"
+          >
+            <span>{isExpanded ? 'Свернуть' : 'Читать полностью'}</span>
+            <ChevronDown
+              size={16}
+              className={`transition-transform duration-500 ease-out ${isExpanded ? 'rotate-180' : ''} group-hover:translate-y-0.5`}
+            />
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// CTA Card with rotating pain points
+const ReviewCtaCard: React.FC = () => {
+  const painPoints = [
+    "Не знаю, куда двигаться дальше",
+    "Чувствую нереализованный потенциал",
+    "Потеряла мотивацию и энергию",
+    "Застряла на одном месте",
+    "Хочу изменений, но боюсь",
+    "Не понимаю, чего хочу на самом деле",
+    "Сложно принять важное решение",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % painPoints.length);
+        setIsAnimating(false);
+      }, 400);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex-shrink-0 w-[320px] md:w-[400px] bg-zinc-900 rounded-2xl p-6 md:p-8 relative overflow-hidden group transition-all duration-500 hover:bg-gradient-to-br hover:from-zinc-900 hover:to-zinc-800 border border-transparent hover:border-brand-red/20">
+      {/* Subtle glow on hover */}
+      <div className="absolute -top-20 -right-20 w-40 h-40 bg-brand-red/0 rounded-full blur-3xl group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none"></div>
+
+      {/* Header with silhouette */}
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-16 h-16 rounded-full bg-zinc-700 border-2 border-dashed border-gray-500 group-hover:border-brand-red/40 flex items-center justify-center flex-shrink-0 transition-colors duration-500">
+          <User size={32} className="text-gray-500 group-hover:text-gray-400 transition-colors duration-300" />
+        </div>
+        <div>
+          <h4 className="text-2xl font-oswald font-bold text-white">Ты?</h4>
+          <p className="text-sm text-gray-400">Следующая история успеха</p>
+        </div>
+      </div>
+
+      {/* Rotating pain points */}
+      <div className="mb-6">
+        <p className="text-gray-500 text-sm mb-2">Знакомо?</p>
+        <div className="h-[48px] overflow-hidden">
+          <p
+            className={`text-white text-base leading-relaxed transition-all duration-400 ${
+              isAnimating
+                ? 'opacity-0 -translate-y-2'
+                : 'opacity-100 translate-y-0'
+            }`}
+          >
+            «{painPoints[currentIndex]}»
+          </p>
+        </div>
+      </div>
+
+      {/* CTA content */}
+      <div>
+        <p className="text-gray-400 text-sm leading-relaxed mb-5">
+          Каждый отзыв выше начинался с похожих мыслей.
+          <span className="text-white"> Один разговор может всё изменить.</span>
+        </p>
+
+        <a
+          href="https://t.me/lydiaeguy"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => analytics.ctaClick('reviews_cta_card')}
+          className="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300"
+        >
+          <span>Записаться на диагностику</span>
+          <ArrowRight size={18} />
+        </a>
+
+        <p className="text-center text-xs text-gray-500 mt-3">Бесплатно • 30 минут</p>
+      </div>
+    </div>
+  );
+};
+
+// Reviews Section with loop navigation
+const ReviewsSection: React.FC = () => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const cardWidth = 340;
+
+  const scrollTo = (direction: 'left' | 'right') => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    if (direction === 'left') {
+      if (container.scrollLeft <= 10) {
+        // At start → go to end
+        container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      }
+    } else {
+      if (container.scrollLeft >= maxScroll - 10) {
+        // At end → go to start
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      }
+    }
+  };
+
+  return (
+    <section id={SectionId.REVIEWS} className="py-20 md:py-32 bg-black text-white overflow-hidden">
+      <div className="container mx-auto px-6 mb-8 md:mb-12">
+        <SectionHeading title="ИСТОРИИ" subtitle="Реальные отзывы моих клиентов" light centered accent />
+      </div>
+
+      <div className="relative px-4 md:px-16">
+        {/* Navigation arrows */}
+        <button
+          onClick={() => scrollTo('left')}
+          className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-brand-red hover:bg-red-700 rounded-full flex items-center justify-center transition-colors shadow-lg"
+          aria-label="Предыдущий отзыв"
+        >
+          <ChevronLeft size={24} className="text-white" />
+        </button>
+        <button
+          onClick={() => scrollTo('right')}
+          className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-brand-red hover:bg-red-700 rounded-full flex items-center justify-center transition-colors shadow-lg"
+          aria-label="Следующий отзыв"
+        >
+          <ChevronRight size={24} className="text-white" />
+        </button>
+
+        {/* Gradient overlays */}
+        <div className="absolute left-10 md:left-16 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-10 md:right-16 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+        {/* Reviews container */}
+        <div
+          ref={containerRef}
+          className="flex gap-6 overflow-x-auto no-scrollbar px-12 md:px-8 scroll-smooth"
+        >
+          {REVIEWS.map((review) => (
+            <ReviewCard key={review.id} review={review} />
+          ))}
+
+          {/* CTA Card - "You could be next" */}
+          <ReviewCtaCard />
+        </div>
+      </div>
+    </section>
+  );
+};
 
 // Popup для записи на диагностику (маркетинговая воронка)
 // Показывается при каждом посещении и повторно через 15 минут
@@ -1014,28 +1310,7 @@ const HomeView: React.FC<{ onServiceClick: (serviceId: number) => void; onArticl
       </section>
 
       {/* --- REVIEWS --- */}
-      <section id={SectionId.REVIEWS} className="py-32 bg-black text-white overflow-hidden">
-        <div className="container mx-auto px-6">
-          <SectionHeading title="КЕЙСЫ" subtitle="Слова моих клиентов" light centered accent />
-
-          <div className="flex flex-col md:flex-row gap-8 mt-12">
-            {REVIEWS.map((review) => (
-              <div key={review.id} className="bg-white/5 p-10 border border-white/10 hover:border-brand-red transition-all duration-300 flex flex-col relative group">
-                <div className="absolute top-0 right-0 w-12 h-12 bg-white/5 group-hover:bg-brand-red transition-colors flex items-center justify-center">
-                  <span className="text-2xl font-serif">"</span>
-                </div>
-                <p className="text-gray-300 font-light leading-relaxed text-lg flex-grow mb-8 group-hover:text-white transition-colors">
-                  {review.text}
-                </p>
-                <div>
-                  <p className="font-oswald text-xl uppercase font-bold text-white mb-1">{review.name}</p>
-                  <p className="text-xs text-brand-red uppercase tracking-widest font-bold">{review.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ReviewsSection />
 
       {/* --- FAQ --- */}
       <section id={SectionId.FAQ} className="py-32 bg-white">
