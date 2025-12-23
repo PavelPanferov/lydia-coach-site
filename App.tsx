@@ -764,9 +764,9 @@ const ReviewsSection: React.FC = () => {
           <ChevronRight size={24} className="text-white" />
         </button>
 
-        {/* Gradient overlays */}
-        <div className="absolute left-10 md:left-16 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-10 md:right-16 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+        {/* Gradient overlays - hidden on mobile, visible on desktop */}
+        <div className="hidden md:block absolute left-16 top-0 bottom-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="hidden md:block absolute right-16 top-0 bottom-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
         {/* Reviews container */}
         <div
